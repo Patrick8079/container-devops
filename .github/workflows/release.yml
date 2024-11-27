@@ -28,9 +28,15 @@ jobs:
     steps:
 
       - name: set values
-        id: vars
+        id: gen_version
         run: |
-          echo "${{ github.head_ref }}" | tr / - >> $TEST_TAG
+          echo "TEST_TAG=${{ github.head_ref }}" >> $GITHUB_OUTPUT
+      - name: Use the value
+        # this sets environment variables for this step
+        env:
+          TEST_TAG: ${{ steps.gen_version.outputs.TEST_TAG }}
+        run: |
+          echo "${TEST_TAG}"
 
       - name: Checkout repository
         uses: actions/checkout@v4
