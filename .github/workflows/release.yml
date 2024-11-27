@@ -18,7 +18,7 @@ jobs:
   Release:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: read
       packages: write
@@ -26,6 +26,11 @@ jobs:
       id-token: write
       
     steps:
+
+      - name: set values
+        id: vars
+        run: |
+          echo "${{ github.head_ref }}" | tr / - >> $TEST_TAG
 
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -68,4 +73,4 @@ jobs:
           owner: Patrick8079
           # NOTE: using Personal Access Token
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: "${{ github.head_ref////-}}"
+          tag: "${{ $TEST_TAG }}"
