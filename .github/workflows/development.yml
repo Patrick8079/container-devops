@@ -52,7 +52,7 @@ jobs:
       - name: Remove all older containers
         uses: actions/delete-package-versions@v5
         with: 
-          package-name: '${{ steps.meta.outputs.version }}'
+          package-name: 'container-devops'
           package-type: 'container'
           min-versions-to-keep: 1
           delete-only-untagged-versions: 'true'
