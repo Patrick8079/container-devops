@@ -24,13 +24,16 @@ jobs:
       packages: write
       attestations: write
       id-token: write
-      
+
+    outputs:
+      test_tag: ${{ steps.gen_version.outputs.TEST_TAG }}
+
     steps:
 
       - name: set values
         id: gen_version
         run: |
-          echo "TEST_TAG=${{ github.head_ref }}" >> $GITHUB_OUTPUT
+          echo "TEST_TAG=${ github.head_ref }" | tr / - >> $GITHUB_OUTPUT
       - name: Use the value
         # this sets environment variables for this step
         env:
@@ -79,4 +82,4 @@ jobs:
           owner: Patrick8079
           # NOTE: using Personal Access Token
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: "${{ TEST_TAG }}"
+          tag: "${{ env.TEST_TAG }}"
