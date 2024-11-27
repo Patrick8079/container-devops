@@ -1,0 +1,10 @@
+services:
+  devops:
+    image: ghcr.io/patrick8079/container-devops:main
+    hostname: container-devops
+    container_name: container-devops
+    stdin_open: true
+    tty: true
+    volumes:
+      - '/root/devops:/devops'
+    working_dir: /devops
