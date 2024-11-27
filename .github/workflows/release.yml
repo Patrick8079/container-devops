@@ -55,7 +55,16 @@ jobs:
       - name: Remove all older containers
         uses: actions/delete-package-versions@v5
         with: 
-          package-name: 'container-389ds-init'
+          package-name: 'container-devops'
           package-type: 'container'
           delete-only-untagged-versions: 'true'
           min-versions-to-keep: 2
+
+      - name: Delete image
+        uses: bots-house/ghcr-delete-image-action@v1.1.0
+        with:
+          # NOTE: at now only orgs is supported
+          name: container-devops
+          # NOTE: using Personal Access Token
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.head_ref }}
