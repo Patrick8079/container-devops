@@ -1,0 +1,15 @@
+ansible-core~=2.17.1
+ansible-lint~=24.6.0
+setuptools~=69.2.0
+requests~=2.31.0
+paramiko~=3.4.0
+requests-credssp~=2.0.0
+pywinrm~=0.4.3
+netaddr~=1.2.1
+jmespath~=1.0.1
+pytz~=2024.1
+jxmlease~=1.0.3
+scp~=0.14.5
+xmltodict~=0.13.0
+hvac~=2.1.0
+pypsrp~=0.8.0
