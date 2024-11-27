@@ -82,4 +82,4 @@ jobs:
           owner: patrick8079
           # NOTE: using Personal Access Token
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ steps.gen_version.outputs.TEST_TAG }}
+          tag: main #${{ steps.gen_version.outputs.TEST_TAG }}
