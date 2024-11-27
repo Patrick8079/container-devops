@@ -78,7 +78,13 @@ jobs:
         uses: dataaxiom/ghcr-cleanup-action@v1
         with:
           owner: patrick8079
+<<<<<<< HEAD
           repository: container-devops
           package: container-devops
           delete-tags: ${{ steps.gen_version.outputs.TEST_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
+=======
+          # NOTE: using Personal Access Token
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: main #${{ steps.gen_version.outputs.TEST_TAG }}
+>>>>>>> refs/remotes/origin/feature/test
