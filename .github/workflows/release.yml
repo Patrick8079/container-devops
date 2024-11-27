@@ -63,7 +63,7 @@ jobs:
         with:
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: latest
           labels: ${{ steps.meta.outputs.labels }}
           
       - name: Remove all older containers
