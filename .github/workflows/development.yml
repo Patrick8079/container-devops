@@ -10,7 +10,6 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  BRANCH: ${{ github.ref }}
 
 jobs:
 
@@ -53,7 +52,7 @@ jobs:
       - name: Remove all older containers
         uses: actions/delete-package-versions@v5
         with: 
-          package-name: '${{ env.IMAGE_NAME }}'
+          package-name: '${{ steps.meta.outputs.version }}'
           package-type: 'container'
           min-versions-to-keep: 1
           delete-only-untagged-versions: 'true'
