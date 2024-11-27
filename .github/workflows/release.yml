@@ -33,7 +33,7 @@ jobs:
       - name: set values
         id: gen_version
         run: |
-          echo "TEST_TAG=${ github.head_ref }" | tr / - >> $GITHUB_OUTPUT
+          echo "TEST_TAG=${{ github.head_ref }}" | tr / - >> $GITHUB_OUTPUT
       - name: Use the value
         # this sets environment variables for this step
         env:
