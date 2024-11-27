@@ -65,6 +65,7 @@ jobs:
         with:
           # NOTE: at now only orgs is supported
           name: container-devops
+          owner: Patrick8079
           # NOTE: using Personal Access Token
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.head_ref }}
