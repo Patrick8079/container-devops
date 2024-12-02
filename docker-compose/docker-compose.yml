@@ -6,5 +6,5 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - '/root/devops:/devops'
-    working_dir: /devops
+      - '/root/git:/root/git'
+    working_dir: /root/git

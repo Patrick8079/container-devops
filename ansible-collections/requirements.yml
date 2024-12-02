@@ -9,4 +9,6 @@ collections:
     version: 4.0.1
   - name: chocolatey.chocolatey
     version: 1.5.3
+  - name: ansible.posix
+    version: 1.6.2
 
