@@ -29,9 +29,10 @@ ENV TOFU_VERSION=1.8.6
 ENV GO_VERSION="1.23.3"
 ENV PATH=$PATH:/usr/local/go/bin
 
-COPY --from=builder /usr/lib/python${PYTHON_VERSION}/site-packages /usr/lib/python${PYTHON_VERSION}/site-packages/
-COPY --from=builder /root/.ansible/collections /root/.ansible/collections
-COPY --from=builder /usr/bin/ansible* /usr/bin
+WORKDIR /root/
+
+COPY ./ansible-collections/requirements.yml .
+COPY ./python-packages/requirements.txt .
 
 RUN apk add --update --no-cache python-${PYTHON_VERSION} py${PYTHON_VERSION}-pip git openssh sshpass unzip gettext findutils jq nmap curl bind-tools wget openldap-clients\
     && find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
