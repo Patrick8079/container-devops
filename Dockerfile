@@ -46,5 +46,3 @@ RUN curl --proto '=https' --tlsv1.2 -fsSL https://github.com/opentofu/opentofu/r
 RUN curl --proto '=https' --tlsv1.2 -fsSL https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz -o ./go${GO_VERSION}.linux-amd64.tar.gz && \
     tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz && \
     rm -f ./go${GO_VERSION}.linux-amd64.tar.gz
-
-RUN pip3 install --no-cache-dir --prefer-binary azure-cli
