@@ -35,7 +35,7 @@ COPY --from=builder /usr/lib/python${PYTHON_VERSION}/site-packages/ /usr/lib/pyt
 COPY --from=builder /root/.ansible/collections /root/.ansible/collections
 COPY --from=builder /usr/bin/ansible* /usr/bin
 
-RUN apk add --update --no-cache python-${PYTHON_VERSION} py${PYTHON_VERSION}-pip git openssh sshpass scp unzip gettext findutils jq nmap curl bind-tools wget openldap-clients\
+RUN apk add --update --no-cache python-${PYTHON_VERSION} py${PYTHON_VERSION}-pip git openssh sshpass unzip gettext findutils jq nmap curl bind-tools wget openldap-clients\
     && find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
     && find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
 
