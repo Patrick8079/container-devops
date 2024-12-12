@@ -13,3 +13,4 @@ scp==0.14.5
 xmltodict==0.13.0
 hvac==2.1.0
 pypsrp==0.8.0
+azure-cli==2.67.0
